@@ -13,8 +13,14 @@
 //Labels
 @property (weak, nonatomic) IBOutlet UILabel *lblWelcome;
 
+//Switch
+@property (weak, nonatomic) IBOutlet UISwitch *sitchUser;
+
 //Actions
 - (IBAction)btn1Pressed:(id)sender;
+- (IBAction)btnLeftPressed:(id)sender;
+- (IBAction)btnRightPressed:(id)sender;
+- (IBAction)switchUser:(id)sender;
 
 @end
 

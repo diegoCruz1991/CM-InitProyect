@@ -11,7 +11,7 @@
 //NSArray         *aNames; Array con limite
 NSMutableArray  *maNames; // Array sin limites
 
-int iIndex = 0;
+long iIndex = 0;
 
 @interface Start ()
 
@@ -53,6 +53,40 @@ int iIndex = 0;
 - (IBAction)btn1Pressed:(id)sender {
     self.lblWelcome.text = maNames[iIndex];
     iIndex++;
-    self.lblWelcome.adjustsFontSizeToFitWidth = "YES";
+    self.lblWelcome.adjustsFontSizeToFitWidth = YES;
+    if (iIndex >= maNames.count) {
+        iIndex = 0;
+    }
+}
+
+- (IBAction)btnLeftPressed:(id)sender {
+    self.lblWelcome.adjustsFontSizeToFitWidth = YES;
+    iIndex--;
+    if (iIndex < 0) {
+        iIndex = maNames.count-1;
+    }
+    self.lblWelcome.text = maNames[iIndex];
+}
+
+- (IBAction)btnRightPressed:(id)sender {
+    self.lblWelcome.adjustsFontSizeToFitWidth = YES;
+    iIndex++;
+    if (iIndex >= maNames.count) {
+        iIndex = 0;
+    }
+    self.lblWelcome.text = maNames[iIndex];
+}
+
+- (IBAction)switchUser:(id)sender {
+    //TODO: Hacer invisible la imagen
+    if (self.sitchUser.isOn) {
+        /*
+         self.imgUser.hidden = NO;
+         */
+    }else {
+        /*
+         self.imgUser.hidden = YES;
+         */
+    }
 }
 @end
