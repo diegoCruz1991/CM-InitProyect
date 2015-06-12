@@ -28,4 +28,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)btn1Pressed:(id)sender {
+    self.lblWelcome.text = @"Que Sed, y no hay agua!";
+    self.lblWelcome.adjustsFontSizeToFitWidth = "YES";
+}
 @end

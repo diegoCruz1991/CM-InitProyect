@@ -11,9 +11,10 @@
 @interface Start : UIViewController
 
 //Labels
-
-
 @property (weak, nonatomic) IBOutlet UILabel *lblWelcome;
+
+//Actions
+- (IBAction)btn1Pressed:(id)sender;
 
 @end
 
