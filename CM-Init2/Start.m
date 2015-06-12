@@ -8,15 +8,24 @@
 
 #import "Start.h"
 
+//NSArray         *aNames; Array con limite
+NSMutableArray  *maNames; // Array sin limites
+
+int iIndex = 0;
+
 @interface Start ()
 
 @end
 
 @implementation Start
 
+/****************************************/
+#pragma mark - Init Methods
+/****************************************/
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.lblWelcome.text = @"Que calor!";
+    [self initController];
+    self.lblWelcome.text = @"Names";
     /*
      Otra manera de llamar atributos
      */
@@ -28,8 +37,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)initController {
+    self.lblWelcome.text = @"Names";
+    /*
+     Otra manera de llamar atributos
+     */
+    //_lblWelcome.text = @"Que calor!";
+    maNames = [[NSMutableArray alloc] init];
+    maNames = [[NSMutableArray alloc] initWithObjects: @"Walter", @"Carlos", @"Vita", @"Diego" , nil];
+}
+
+/****************************************/
+#pragma mark - Button Actions
+/****************************************/
 - (IBAction)btn1Pressed:(id)sender {
-    self.lblWelcome.text = @"Que Sed, y no hay agua!";
+    self.lblWelcome.text = maNames[iIndex];
+    iIndex++;
     self.lblWelcome.adjustsFontSizeToFitWidth = "YES";
 }
 @end
